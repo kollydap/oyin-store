@@ -1,15 +1,17 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
+import StockList from '../components/stocks/stock-list';
+import { getAvailableStocks } from '../dummy-data'
 import styles from '../styles/Home.module.css'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const availableStocks = getAvailableStocks();
   return (
     <>
-     
-      Kool
+     <ul>
+      <StockList item={availableStocks}/>
+     </ul>
     </>
   )
 }
